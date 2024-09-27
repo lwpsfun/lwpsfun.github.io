@@ -1,0 +1,313 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>LWPSFun</title>
+    <style>
+        .card {
+    overflow: hidden; /* Ensure that overflowing parts of images are hidden */
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%; /* Set width to 100% of the card */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Scale image to cover the area, preserving aspect ratio */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between title, text, and button */
+    height: 150px; /* Fixed height for consistency */
+}
+
+.btn-primary {
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.not-found {
+            color: red;
+            font-size: 24px; /* Make it larger */
+            text-align: center; /* Center the text */
+            margin-top: 20px; /* Add some margin */
+            display: none; /* Initially hidden */
+        }
+
+        .suggestion {
+            text-align: center; /* Center the text */
+            margin-top: 10px; /* Add some margin */
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">LWPSFun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Games
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./games/minecraft.html">Minecraft</a></li>
+            <li><a class="dropdown-item" href="./games/gun-mayhem.html">Gun Mayhem</a></li>
+            <li><a class="dropdown-item" href="./games/gun-mayhem-2.html">Gun Mayhem 2</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-3d.html">Parkour Block 3D</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-2.html">Parkour Block 2</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-3.html">Parkour Block 3</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-4.html">Parkour Block 4</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-5.html">Parkour Block 5</a></li>
+            <li><a class="dropdown-item" href="./games/parkour-block-6.html">Parkour Block 6</a></li>
+            <li><a class="dropdown-item" href="./games/doodle-jump.html">Doodle Jump</a></li>
+            <li><a class="dropdown-item" href="./games/red-ball-4.html">Red Ball 4</a></li>
+            <li><a class="dropdown-item" href="./games/subway-surfers.html">Subway Surfers</a></li>
+            <li><a class="dropdown-item" href="./games/superfighters.html">Superfighters</a></li>
+            <li><a class="dropdown-item" href="./games/going-balls.html">Going Balls</a></li>
+            <li><a class="dropdown-item" href="./games/tofm.html">TOFM</a></li>
+            <li><a class="dropdown-item" href="./games/geometry-dash.html">Geometry Dash</a></li>
+            <li><a class="dropdown-item" href="./games/very-hard-game.html">Very Hard Game</a></li>
+            <li><a class="dropdown-item" href="./games/flappy-bird.html">Flappy Bird</a></li>
+          </ul>
+        </li>
+      </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex ms-auto" onsubmit="return false;">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" onkeydown="if(event.key === 'Enter') { filterGames(); }">
+                    <button class="btn btn-outline-success" type="button" onclick="filterGames()">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4" id="gameContainer">
+        <div class="row">
+            <!-- 18 Game Cards -->
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://preview.redd.it/avjal33hpqo61.png?width=512&format=png&auto=webp&s=b652d83347448df74c8ba61c17b322e686ee32a4" class="card-img-top" alt="Game 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Minecraft</h5>
+                        <p class="card-text">by LAX1DUDE</p>
+                        <a href="./games/minecraft.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/67/81/3c/67813c3b-3d2b-ef40-e45b-29e412c0d624/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg" class="card-img-top" alt="Game 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Gun Mayhem</h5>
+                        <p class="card-text">by Kevin Gu</p>
+                        <a href="./games/gun-mayhem.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://static.cdnpog.com/images/gun-mayhem-2.png" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Gun Mayhem 2</h5>
+                        <p class="card-text">by Kevin Gu</p>
+                        <a href="./games/gun-mayhem-2.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://geometrydash2.com/data/image/parkour-block-3d-1.jpeg" class="card-img-top" alt="Game 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 3D</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-3d.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gH72n5eSLF4HOfHCLX3nhfgAtAX-Jt-6QA&s" class="card-img-top" alt="Game 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 2</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-2.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmea29dOw_X7_bdwLrJAQc3a8yxEuNUsdYAQ&s" class="card-img-top" alt="Game 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 3</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-3.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://gamegfx.spielaffe.de/images/game/3668/3668232/38574_parkour-block-4.png" class="card-img-top" alt="Game 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 4</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-4.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://gamegfx.spielaffe.de/images/game/3989/3989103/38427_parkour-block-5.png" class="card-img-top" alt="Game 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 5</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-5.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://img.gamedistribution.com/221eb9b1a6714da1a7bdb8346e6e4515-512x512.jpg" class="card-img-top" alt="Game 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Parkour Block 6</h5>
+                        <p class="card-text">by Poly Games</p>
+                        <a href="./games/parkour-block-6.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/51mrB6jG8pL.png" class="card-img-top" alt="Game 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Doodle Jump</h5>
+                        <p class="card-text">by Lima Sky</p>
+                        <a href="./games/doodle-jump.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://play-lh.googleusercontent.com/_2RsmTzfPHkBeSmDVOzgKaSQGLNqYep9mRsuYErzIcQslzAt_0hQDgoP4wJCwvMJkizT" class="card-img-top" alt="Game 11">
+                    <div class="card-body">
+                        <h5 class="card-title">Red Ball 4</h5>
+                        <p class="card-text">by Yohoho Games</p>
+                        <a href="./games/red-ball-4.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://play-lh.googleusercontent.com/GK_1IlnTReyUeX3YJ0sQ1UVFoZGa46tFDDYObuInbVOONTMehCdzXjZJyeulw90Zf5g" class="card-img-top" alt="Game 12">
+                    <div class="card-body">
+                        <h5 class="card-title">Subway Surfers</h5>
+                        <p class="card-text">by Kiloo</p>
+                        <a href="./games/subway-surfers.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://www.jopi.com/cdn-cgi/image/quality=78,width=192,height=192,fit=cover,f=auto/img/t/super-fighters-2.png" class="card-img-top" alt="Game 13">
+                    <div class="card-body">
+                        <h5 class="card-title">Superfighters</h5>
+                        <p class="card-text">by Mythologic</p>
+                        <a href="./games/superfighters.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://play-lh.googleusercontent.com/uStmpVPF2ByLKg8t8-lbFJjJYV4wtyNwMXWp8tseCVXj-wtpV3lvQ2bTiYMQutU2SeFB" class="card-img-top" alt="Game 14">
+                    <div class="card-body">
+                        <h5 class="card-title">Going Balls</h5>
+                        <p class="card-text">Supersonic Studios</p>
+                        <a href="./games/going-balls.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/41zzsoaOZuL._h1_.png" class="card-img-top" alt="Game 15">
+                    <div class="card-body">
+                        <h5 class="card-title">TOFM</h5>
+                        <p class="card-text">by Happymagenta</p>
+                        <a href="./games/tofm.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://steamuserimages-a.akamaihd.net/ugc/548644811752543413/CE58905EB85CBBF4B6DBCC266710DC62F996794E/?imw=512&imh=512&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" class="card-img-top" alt="Game 16">
+                    <div class="card-body">
+                        <h5 class="card-title">Geometry Dash</h5>
+                        <p class="card-text">by RobTop Games</p>
+                        <a href="./games/geometry-dash.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://femoi.uk/wp-content/uploads/2022/09/The-Worlds-Hardest-Game.jpg" class="card-img-top" alt="Game 17">
+                    <div class="card-body">
+                        <h5 class="card-title">Very Hard Game</h5>
+                        <p class="card-text">by Armor Games</p>
+                        <a href="./games/very-hard-game.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 game-card">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/21ZzpgClpiL.png" class="card-img-top" alt="Game 18">
+                    <div class="card-body">
+                        <h5 class="card-title">Flappy Bird</h5>
+                        <p class="card-text">by Dong Nguyen</p>
+                        <a href="./games/flappy-bird.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="not-found" id="notFoundMessage">Game not found</div>
+        <div class="suggestion" id="suggestionMessage">If you would like to suggest a game, email lwpsfun@gmail.com</div>
+    </div>
+
+    <script>
+        function filterGames() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const gameContainer = document.getElementById('gameContainer');
+            const cards = gameContainer.getElementsByClassName('game-card');
+            const notFoundMessage = document.getElementById('notFoundMessage');
+            const suggestionMessage = document.getElementById('suggestionMessage');
+
+            let found = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].getElementsByClassName('card-title')[0].textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    cards[i].style.display = '';
+                    found = true;
+                } else {
+                    cards[i].style.display = 'none';
+                }
+            }
+
+            if (found) {
+                notFoundMessage.style.display = 'none';
+                suggestionMessage.style.display = 'none';
+            } else {
+                notFoundMessage.style.display = 'block';
+                suggestionMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

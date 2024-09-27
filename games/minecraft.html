@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>LWPSFun - Minecraft</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        .game-container {
+            background-color: rgb(200, 200, 200);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 800px; /* Fixed width for the game container */
+            height: 400px; /* Increased height for the embed area */
+            margin-right: auto; /* Align to the left */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between; /* Space between title and buttons */
+            align-items: center; /* Center vertically */
+            margin-bottom: 10px; /* Space below the header */
+        }
+
+        .game-title {
+            font-size: 24px;
+            margin: 0; /* Remove default margin */
+        }
+
+        iframe {
+            width: 100%;
+            height: 320px; /* Adjusted height to fit within the container */
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .ad-section {
+            background-color: rgb(180, 180, 180);
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px; /* Adjust width for the ad section */
+            height: 700px; /* Same height as the game container */
+            margin-left: 20px; /* Space between game and ad sections */
+            flex-shrink: 0; /* Prevents the ad section from shrinking */
+        }
+
+        .ad-section img {
+    width: 100%; /* Make logos responsive */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between logos */
+}
+
+
+
+        .container {
+            display: flex; /* Use flexbox to align game and ad sections */
+            align-items: flex-start; /* Align items to the top */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">LWPSFun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Games
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./minecraft.html">Minecraft</a></li>
+            <li><a class="dropdown-item" href="./gun-mayhem.html">Gun Mayhem</a></li>
+            <li><a class="dropdown-item" href="./gun-mayhem-2.html">Gun Mayhem 2</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-3d.html">Parkour Block 3D</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-2.html">Parkour Block 2</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-3.html">Parkour Block 3</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-4.html">Parkour Block 4</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-5.html">Parkour Block 5</a></li>
+            <li><a class="dropdown-item" href="./parkour-block-6.html">Parkour Block 6</a></li>
+            <li><a class="dropdown-item" href="./doodle-jump.html">Doodle Jump</a></li>
+            <li><a class="dropdown-item" href="./red-ball-4.html">Red Ball 4</a></li>
+            <li><a class="dropdown-item" href="./subway-surfers.html">Subway Surfers</a></li>
+            <li><a class="dropdown-item" href="./superfighters.html">Superfighters</a></li>
+            <li><a class="dropdown-item" href="./going-balls.html">Going Balls</a></li>
+            <li><a class="dropdown-item" href="./tofm.html">TOFM</a></li>
+            <li><a class="dropdown-item" href="./geometry-dash.html">Geometry Dash</a></li>
+            <li><a class="dropdown-item" href="./very-hard-game.html">Very Hard Game</a></li>
+            <li><a class="dropdown-item" href="./flappy-bird.html">Flappy Bird</a></li>
+          </ul>
+        </li>
+      </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex ms-auto" onsubmit="return false;">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" onkeydown="if(event.key === 'Enter') { filterGames(); }">
+                    <button class="btn btn-outline-success" type="button" onclick="filterGames()">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4">
+        <div class="game-container">
+            <iframe src="https://sd592g.github.io/zj684od4lfg/" id="gameFrame"></iframe>
+            <div class="header">
+                <h3 class="game-title">Minecraft</h3>
+                <div class="btn-group">
+                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#embedModal">
+                        <i class="fas fa-code"></i>
+                    </button>
+                    <button class="btn btn-primary" onclick="toggleFullScreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-section">
+            <h4>Other Games</h4>
+            <a href="./gun-mayhem-2.html"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/67/81/3c/67813c3b-3d2b-ef40-e45b-29e412c0d624/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg" alt="Game 1"></a>
+            <a href="./geometry-dash.html"><img src="https://steamuserimages-a.akamaihd.net/ugc/548644811752543413/CE58905EB85CBBF4B6DBCC266710DC62F996794E/?imw=512&imh=512&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Game 2"></a>
+            <a href="./subway-surfers.html"><img src="https://play-lh.googleusercontent.com/GK_1IlnTReyUeX3YJ0sQ1UVFoZGa46tFDDYObuInbVOONTMehCdzXjZJyeulw90Zf5g" alt="Game 3"></a>
+            <a href="./doodle-jump.html"><img src="https://m.media-amazon.com/images/I/51mrB6jG8pL.png" alt="Game 4"></a>
+        </div>
+    </div>
+
+    <!-- Embed Modal -->
+    <div class="modal fade" id="embedModal" tabindex="-1" aria-labelledby="embedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="embedModalLabel">Embed Game</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" id="embedCode" readonly rows="3" style="font-family: monospace;">&lt;iframe src="https://sd592g.github.io/zj684od4lfg/" width="800" height="600" frameborder="0"&gt;&lt;/iframe&gt;</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            const gameFrame = document.getElementById('gameFrame');
+            if (!document.fullscreenElement) {
+                gameFrame.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function filterGames() {
+            alert("Search not available here!");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
